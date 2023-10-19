@@ -1,0 +1,33 @@
+{
+    "Main Test Suite Setup": {
+        "prefix": "testm",
+        "body": [
+            "void main() {",
+            " group('${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} -', (){",
+            "",
+            " });",
+            "}"
+        ],
+        "description": "Main Test Suite Setup"
+    },
+    "Test Group Setup": {
+        "prefix": "testg",
+        "description": "Creates a Test group with a test",
+        "body": [
+            "group('${1} -', () {",
+            " test('${2}', () {",
+            "",
+            " });",
+            "});"
+        ]
+    },
+    "Single Test Setup": {
+        "prefix": "tests",
+        "description": "Creates a single test",
+        "body": [
+            " test('${1}', () {",
+            "",
+            " });"
+        ]
+    }
+}
