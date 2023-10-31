@@ -20,7 +20,10 @@ OptionGroup _$OptionGroupFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OptionGroup {
+  String get title => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
+  List<ProductOption> get options => throw _privateConstructorUsedError;
+  bool get required => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +37,7 @@ abstract class $OptionGroupCopyWith<$Res> {
           OptionGroup value, $Res Function(OptionGroup) then) =
       _$OptionGroupCopyWithImpl<$Res, OptionGroup>;
   @useResult
-  $Res call({int id});
+  $Res call({String title, int id, List<ProductOption> options, bool required});
 }
 
 /// @nodoc
@@ -50,13 +53,28 @@ class _$OptionGroupCopyWithImpl<$Res, $Val extends OptionGroup>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? title = null,
     Object? id = null,
+    Object? options = null,
+    Object? required = null,
   }) {
     return _then(_value.copyWith(
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      options: null == options
+          ? _value.options
+          : options // ignore: cast_nullable_to_non_nullable
+              as List<ProductOption>,
+      required: null == required
+          ? _value.required
+          : required // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -69,7 +87,7 @@ abstract class _$$OptionGroupImplCopyWith<$Res>
       __$$OptionGroupImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id});
+  $Res call({String title, int id, List<ProductOption> options, bool required});
 }
 
 /// @nodoc
@@ -83,13 +101,28 @@ class __$$OptionGroupImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? title = null,
     Object? id = null,
+    Object? options = null,
+    Object? required = null,
   }) {
     return _then(_$OptionGroupImpl(
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      options: null == options
+          ? _value._options
+          : options // ignore: cast_nullable_to_non_nullable
+              as List<ProductOption>,
+      required: null == required
+          ? _value.required
+          : required // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -97,17 +130,35 @@ class __$$OptionGroupImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$OptionGroupImpl implements _OptionGroup {
-  _$OptionGroupImpl({required this.id});
+  _$OptionGroupImpl(
+      {required this.title,
+      required this.id,
+      required final List<ProductOption> options,
+      this.required = false})
+      : _options = options;
 
   factory _$OptionGroupImpl.fromJson(Map<String, dynamic> json) =>
       _$$OptionGroupImplFromJson(json);
 
   @override
+  final String title;
+  @override
   final int id;
+  final List<ProductOption> _options;
+  @override
+  List<ProductOption> get options {
+    if (_options is EqualUnmodifiableListView) return _options;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_options);
+  }
+
+  @override
+  @JsonKey()
+  final bool required;
 
   @override
   String toString() {
-    return 'OptionGroup(id: $id)';
+    return 'OptionGroup(title: $title, id: $id, options: $options, required: $required)';
   }
 
   @override
@@ -115,12 +166,17 @@ class _$OptionGroupImpl implements _OptionGroup {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OptionGroupImpl &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality().equals(other._options, _options) &&
+            (identical(other.required, required) ||
+                other.required == required));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode => Object.hash(runtimeType, title, id,
+      const DeepCollectionEquality().hash(_options), required);
 
   @JsonKey(ignore: true)
   @override
@@ -137,13 +193,23 @@ class _$OptionGroupImpl implements _OptionGroup {
 }
 
 abstract class _OptionGroup implements OptionGroup {
-  factory _OptionGroup({required final int id}) = _$OptionGroupImpl;
+  factory _OptionGroup(
+      {required final String title,
+      required final int id,
+      required final List<ProductOption> options,
+      final bool required}) = _$OptionGroupImpl;
 
   factory _OptionGroup.fromJson(Map<String, dynamic> json) =
       _$OptionGroupImpl.fromJson;
 
   @override
+  String get title;
+  @override
   int get id;
+  @override
+  List<ProductOption> get options;
+  @override
+  bool get required;
   @override
   @JsonKey(ignore: true)
   _$$OptionGroupImplCopyWith<_$OptionGroupImpl> get copyWith =>

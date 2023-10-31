@@ -7,6 +7,8 @@ part 'product_option.g.dart';
 class ProductOption with _$ProductOption {
   factory ProductOption({
     required int id,
+    required String title,
+    required int price,
   }) = _ProductOption;
 
   factory ProductOption.fromJson(Map<String, dynamic> json) =>

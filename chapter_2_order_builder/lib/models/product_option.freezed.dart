@@ -21,6 +21,8 @@ ProductOption _$ProductOptionFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ProductOption {
   int get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  int get price => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +36,7 @@ abstract class $ProductOptionCopyWith<$Res> {
           ProductOption value, $Res Function(ProductOption) then) =
       _$ProductOptionCopyWithImpl<$Res, ProductOption>;
   @useResult
-  $Res call({int id});
+  $Res call({int id, String title, int price});
 }
 
 /// @nodoc
@@ -51,11 +53,21 @@ class _$ProductOptionCopyWithImpl<$Res, $Val extends ProductOption>
   @override
   $Res call({
     Object? id = null,
+    Object? title = null,
+    Object? price = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -69,7 +81,7 @@ abstract class _$$ProductOptionImplCopyWith<$Res>
       __$$ProductOptionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id});
+  $Res call({int id, String title, int price});
 }
 
 /// @nodoc
@@ -84,11 +96,21 @@ class __$$ProductOptionImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? title = null,
+    Object? price = null,
   }) {
     return _then(_$ProductOptionImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -97,17 +119,22 @@ class __$$ProductOptionImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ProductOptionImpl implements _ProductOption {
-  _$ProductOptionImpl({required this.id});
+  _$ProductOptionImpl(
+      {required this.id, required this.title, required this.price});
 
   factory _$ProductOptionImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductOptionImplFromJson(json);
 
   @override
   final int id;
+  @override
+  final String title;
+  @override
+  final int price;
 
   @override
   String toString() {
-    return 'ProductOption(id: $id)';
+    return 'ProductOption(id: $id, title: $title, price: $price)';
   }
 
   @override
@@ -115,12 +142,14 @@ class _$ProductOptionImpl implements _ProductOption {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ProductOptionImpl &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.price, price) || other.price == price));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode => Object.hash(runtimeType, id, title, price);
 
   @JsonKey(ignore: true)
   @override
@@ -137,13 +166,20 @@ class _$ProductOptionImpl implements _ProductOption {
 }
 
 abstract class _ProductOption implements ProductOption {
-  factory _ProductOption({required final int id}) = _$ProductOptionImpl;
+  factory _ProductOption(
+      {required final int id,
+      required final String title,
+      required final int price}) = _$ProductOptionImpl;
 
   factory _ProductOption.fromJson(Map<String, dynamic> json) =
       _$ProductOptionImpl.fromJson;
 
   @override
   int get id;
+  @override
+  String get title;
+  @override
+  int get price;
   @override
   @JsonKey(ignore: true)
   _$$ProductOptionImplCopyWith<_$ProductOptionImpl> get copyWith =>
