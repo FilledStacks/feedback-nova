@@ -8,5 +8,6 @@ class OrderBuilder {
   void addToOrder({
     required Product product,
     required List<ProductOption> selectedOptions,
+    int quantity = 1,
   }) {}
 }
