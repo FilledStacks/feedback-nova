@@ -26,6 +26,8 @@ To make sure you only focus on unit testing, and not data model design I have cr
 - ProductOption: the seletable options within an option group
 - OrderItem: a model that represents the configuration of product + option + quantity for the API
 
+In addition to the models I created one unit test to get you in the swing of things. It's failing, so you can start by fixing that unit test. 
+
 ## Additional context
 
 On checkout the API expects a model that describes what was ordered. It needs to know: 

@@ -9,6 +9,7 @@ class ProductOption with _$ProductOption {
     required int id,
     required String title,
     required int price,
+    required int optionGroupId,
   }) = _ProductOption;
 
   factory ProductOption.fromJson(Map<String, dynamic> json) =>

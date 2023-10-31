@@ -11,6 +11,7 @@ _$ProductOptionImpl _$$ProductOptionImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as int,
       title: json['title'] as String,
       price: json['price'] as int,
+      optionGroupId: json['optionGroupId'] as int,
     );
 
 Map<String, dynamic> _$$ProductOptionImplToJson(_$ProductOptionImpl instance) =>
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$ProductOptionImplToJson(_$ProductOptionImpl instance) =>
       'id': instance.id,
       'title': instance.title,
       'price': instance.price,
+      'optionGroupId': instance.optionGroupId,
     };

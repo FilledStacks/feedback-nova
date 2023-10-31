@@ -23,6 +23,7 @@ mixin _$ProductOption {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
+  int get optionGroupId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,7 @@ abstract class $ProductOptionCopyWith<$Res> {
           ProductOption value, $Res Function(ProductOption) then) =
       _$ProductOptionCopyWithImpl<$Res, ProductOption>;
   @useResult
-  $Res call({int id, String title, int price});
+  $Res call({int id, String title, int price, int optionGroupId});
 }
 
 /// @nodoc
@@ -55,6 +56,7 @@ class _$ProductOptionCopyWithImpl<$Res, $Val extends ProductOption>
     Object? id = null,
     Object? title = null,
     Object? price = null,
+    Object? optionGroupId = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -69,6 +71,10 @@ class _$ProductOptionCopyWithImpl<$Res, $Val extends ProductOption>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int,
+      optionGroupId: null == optionGroupId
+          ? _value.optionGroupId
+          : optionGroupId // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -81,7 +87,7 @@ abstract class _$$ProductOptionImplCopyWith<$Res>
       __$$ProductOptionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String title, int price});
+  $Res call({int id, String title, int price, int optionGroupId});
 }
 
 /// @nodoc
@@ -98,6 +104,7 @@ class __$$ProductOptionImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? price = null,
+    Object? optionGroupId = null,
   }) {
     return _then(_$ProductOptionImpl(
       id: null == id
@@ -112,6 +119,10 @@ class __$$ProductOptionImplCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int,
+      optionGroupId: null == optionGroupId
+          ? _value.optionGroupId
+          : optionGroupId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -120,7 +131,10 @@ class __$$ProductOptionImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ProductOptionImpl implements _ProductOption {
   const _$ProductOptionImpl(
-      {required this.id, required this.title, required this.price});
+      {required this.id,
+      required this.title,
+      required this.price,
+      required this.optionGroupId});
 
   factory _$ProductOptionImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductOptionImplFromJson(json);
@@ -131,10 +145,12 @@ class _$ProductOptionImpl implements _ProductOption {
   final String title;
   @override
   final int price;
+  @override
+  final int optionGroupId;
 
   @override
   String toString() {
-    return 'ProductOption(id: $id, title: $title, price: $price)';
+    return 'ProductOption(id: $id, title: $title, price: $price, optionGroupId: $optionGroupId)';
   }
 
   @override
@@ -144,12 +160,14 @@ class _$ProductOptionImpl implements _ProductOption {
             other is _$ProductOptionImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.price, price) || other.price == price));
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.optionGroupId, optionGroupId) ||
+                other.optionGroupId == optionGroupId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, price);
+  int get hashCode => Object.hash(runtimeType, id, title, price, optionGroupId);
 
   @JsonKey(ignore: true)
   @override
@@ -169,7 +187,8 @@ abstract class _ProductOption implements ProductOption {
   const factory _ProductOption(
       {required final int id,
       required final String title,
-      required final int price}) = _$ProductOptionImpl;
+      required final int price,
+      required final int optionGroupId}) = _$ProductOptionImpl;
 
   factory _ProductOption.fromJson(Map<String, dynamic> json) =
       _$ProductOptionImpl.fromJson;
@@ -180,6 +199,8 @@ abstract class _ProductOption implements ProductOption {
   String get title;
   @override
   int get price;
+  @override
+  int get optionGroupId;
   @override
   @JsonKey(ignore: true)
   _$$ProductOptionImplCopyWith<_$ProductOptionImpl> get copyWith =>
