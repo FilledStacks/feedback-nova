@@ -5,7 +5,7 @@ part 'product_option.g.dart';
 
 @freezed
 class ProductOption with _$ProductOption {
-  factory ProductOption({
+  const factory ProductOption({
     required int id,
     required String title,
     required int price,

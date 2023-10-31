@@ -7,7 +7,7 @@ part 'option_group.g.dart';
 
 @freezed
 class OptionGroup with _$OptionGroup {
-  factory OptionGroup({
+  const factory OptionGroup({
     required String title,
     required int id,
     required List<ProductOption> options,

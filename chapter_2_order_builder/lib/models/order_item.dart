@@ -5,7 +5,7 @@ part 'order_item.g.dart';
 
 @freezed
 class OrderItem with _$OrderItem {
-  factory OrderItem({
+  const factory OrderItem({
     required int productId,
     required int quantity,
     @Default({}) Map<String, List<int>> options,

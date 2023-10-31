@@ -118,7 +118,7 @@ class __$$OrderItemImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$OrderItemImpl implements _OrderItem {
-  _$OrderItemImpl(
+  const _$OrderItemImpl(
       {required this.productId,
       required this.quantity,
       final Map<String, List<int>> options = const {}})
@@ -177,7 +177,7 @@ class _$OrderItemImpl implements _OrderItem {
 }
 
 abstract class _OrderItem implements OrderItem {
-  factory _OrderItem(
+  const factory _OrderItem(
       {required final int productId,
       required final int quantity,
       final Map<String, List<int>> options}) = _$OrderItemImpl;

@@ -119,7 +119,7 @@ class __$$ProductOptionImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ProductOptionImpl implements _ProductOption {
-  _$ProductOptionImpl(
+  const _$ProductOptionImpl(
       {required this.id, required this.title, required this.price});
 
   factory _$ProductOptionImpl.fromJson(Map<String, dynamic> json) =>
@@ -166,7 +166,7 @@ class _$ProductOptionImpl implements _ProductOption {
 }
 
 abstract class _ProductOption implements ProductOption {
-  factory _ProductOption(
+  const factory _ProductOption(
       {required final int id,
       required final String title,
       required final int price}) = _$ProductOptionImpl;

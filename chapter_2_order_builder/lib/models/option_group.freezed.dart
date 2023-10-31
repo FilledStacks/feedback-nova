@@ -130,7 +130,7 @@ class __$$OptionGroupImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$OptionGroupImpl implements _OptionGroup {
-  _$OptionGroupImpl(
+  const _$OptionGroupImpl(
       {required this.title,
       required this.id,
       required final List<ProductOption> options,
@@ -193,7 +193,7 @@ class _$OptionGroupImpl implements _OptionGroup {
 }
 
 abstract class _OptionGroup implements OptionGroup {
-  factory _OptionGroup(
+  const factory _OptionGroup(
       {required final String title,
       required final int id,
       required final List<ProductOption> options,

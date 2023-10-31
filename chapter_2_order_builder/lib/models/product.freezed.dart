@@ -135,7 +135,7 @@ class __$$ProductImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ProductImpl implements _Product {
-  _$ProductImpl(
+  const _$ProductImpl(
       {required this.id,
       required this.title,
       required this.description,
@@ -197,7 +197,7 @@ class _$ProductImpl implements _Product {
 }
 
 abstract class _Product implements Product {
-  factory _Product(
+  const factory _Product(
       {required final int id,
       required final String title,
       required final String description,
