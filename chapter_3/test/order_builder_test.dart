@@ -1,5 +1,5 @@
 import 'package:chapter_3/models/order_item.dart';
-import 'package:chapter_3/order_builder.dart';
+import 'package:chapter_3/utils/order_builder.dart';
 import 'package:chapter_3/product_data.dart';
 import 'package:test/test.dart';
 
