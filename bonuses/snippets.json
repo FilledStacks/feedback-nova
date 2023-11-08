@@ -29,5 +29,17 @@
             "",
             " });"
         ]
+    },
+    "Mock Registration": {
+        "prefix": "testr",
+        "body": [
+            "Mock${1} getAndRegister${1}() {",
+            " _removeRegistrationIfExists<${1}>();",
+            " final service = Mock${1}();",
+            " locator.registerSingleton<${1}>(service);",
+            " return service;",
+            "}"
+        ],
+        "description": "Creating a Mock Registration Function"
     }
 }
