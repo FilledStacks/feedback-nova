@@ -25,7 +25,7 @@ class ProductDetailsViewModel {
 
   ProductBanner? get availabilityBanner => _availabilityBanner;
 
-  void checkProductAvailability() async {
+  Future<void> checkProductAvailability() async {
     final productAvailability = await _availabilityService.checkAvailability(
       product: product,
     );
