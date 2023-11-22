@@ -23,6 +23,8 @@ class ProductDetailsViewModel {
 
   bool get isProductAvailable => _availabilityBanner != null;
 
+  ProductBanner? get availabilityBanner => _availabilityBanner;
+
   void checkProductAvailability() async {
     final productAvailability = await _availabilityService.checkAvailability(
       product: product,
